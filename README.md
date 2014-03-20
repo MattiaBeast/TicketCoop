@@ -1,4 +1,4 @@
 TicketCoop
 ==========
 
-A custom pdf-excel parser
+A custom pdf-excel parser for Android
