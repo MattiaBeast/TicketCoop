@@ -1,11 +1,10 @@
 package it.brunoro.angelo.ticketcoop;
 
 import java.io.File;
-
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
@@ -14,6 +13,19 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // Get the intent that started this activity
+        Intent intent = getIntent();
+
+        if(intent.getType().equals("application/pdf")){
+        	 try{
+             File file = new File(intent.getData().getPath());
+             Log.i(this.getClass().getName(), "I catch the pdf: ".concat(file.getName()));
+        	 }catch(Exception e){
+        		 Log.e(this.getClass().getName(), ("Error when reading pdf"));
+        	 }
+        	 
+        }
     }
 
 
@@ -39,4 +51,5 @@ public class MainActivity extends Activity {
     	super.onStart();
     }
     
+  
 }
