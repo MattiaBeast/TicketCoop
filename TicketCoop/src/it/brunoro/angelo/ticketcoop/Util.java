@@ -18,6 +18,6 @@ public class Util {
   
   // Show a toast message linked to the context
   public static void toastMessage(Context context, String message){
-    Toast.makeText(context, "External storage is unavailable", Toast.LENGTH_SHORT).show();
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
   }
 }
